@@ -100,12 +100,10 @@ function onCellClicked(elCell, i, j) {
 }
 
 function onCellMarked(elCell, i, j) {
-    // 1. מניעת פתיחת התפריט הקופץ של הדפדפן
     window.event.preventDefault()
 
     console.log('Right clicked on:', i, j)
 
-    // כאן בהמשך תוסף הלוגיקה של הוספה/הסרה של דגל 🚩
 }
 
 
