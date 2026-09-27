@@ -4,18 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mine Sweeper</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body onload="onInit()">
-    <div class="board-container"></div>
-    <button class="restart btn" onclick="onRestart()">RESTART</button>
+    <button class="dark-btn" onclick="onDark()">🌙</button>
+    <div class="stats-container">
+        <div class="lives"><span></span> LIVES LEFT</div>
+        <div class="hint"></div>
+        <button class="safe-btn" onclick="onSafe(this)"><span class="safe-count"></span> SAFE
+            CLICK</button>
+        <div class="timer-container">
+            TIMER: <span class="timer">0.00</span>
+        </div>
+    </div>
+    <div class="game-center-container">
+
+        <div class="levels-container">
+            <button class="level-btn" onclick="onChangeLevel(4, 2, 3)">Beginner</button>
+            <button class="level-btn" onclick="onChangeLevel(8, 14, 3)">Medium</button>
+            <button class="level-btn" onclick="onChangeLevel(12, 32, 4)">Expert</button>
+        </div>
+
+        <div class="board-container"></div>
+
+        <div class="best-score-container">
+            BEST SCORE
+            <div class="score-val"><span id="best-score">-</span></div>
+        </div>
+    </div>
+
+    <button class="restart btn" onclick="onInit()">😀</button>
     <button class="undo btn" onclick="onUndo()">UNDO</button>
-    <button class="undo" onclick="undo()">undo</button>
+
+
+
+    <div class="modal">
+        <h3 class="msg"></h3>
+        <button class="rPlay btn" onclick="onInit()">Play Again</button>
+    </div>
+
+
 
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/lives.js"></script>
+    <script src="js/hint.js"></script>
+    <script src="js/safe.js"></script>
+    <script src="js/undo.js"></script>
 
     <footer>
         <p>created by lidor basteker &copy; 2026</p>
